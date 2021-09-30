@@ -3,10 +3,13 @@ body {
 }
 html {
     scroll-behavior: smooth;
+    overflow: hidden;
+
 }
 
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
