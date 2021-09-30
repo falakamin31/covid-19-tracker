@@ -6,12 +6,12 @@ import { fetchData } from "./api"
 
 const App = () => {
 
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const getData = async () => {
-      const fetchedData = await fetchData();
-      setData({data: fetchedData});
+      const data = await fetchData();
+      setData(data);
     }
     getData();
   }, [])
