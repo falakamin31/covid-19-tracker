@@ -1,0 +1,12 @@
+body {
+    background-color: #f3f7f7;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
