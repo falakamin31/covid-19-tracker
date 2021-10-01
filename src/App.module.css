@@ -3,7 +3,6 @@ body {
 }
 html {
     scroll-behavior: smooth;
-    overflow: hidden;
 
 }
 
@@ -12,4 +11,18 @@ html {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.image {
+    width: 200px;
+    margin-top: 20px;
+
+}
+@media (max-width : 770px)
+{
+    .container {
+        margin: 0 10%;
+    }
+    .image {
+        width :100%
+    }
 }

@@ -8,6 +8,8 @@ import cx from "classnames"
 const Cards= ({ data }) => {
 
     const { confirmed, recovered, deaths, lastUpdate } = data; 
+    console.log(confirmed);
+
 
     if (!confirmed) {
         return 'Loading...';
@@ -20,10 +22,10 @@ const Cards= ({ data }) => {
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>
                         <Typography variant="h5">
                             <CountUp 
-                            starat={0}
+                            start={0}
                             end={confirmed.value}
                             duration={2.5}
-                            seperator=""
+                            seperator=","
                             />
                             
                             </Typography>
@@ -34,15 +36,19 @@ const Cards= ({ data }) => {
 
                     <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <Typography variant="h5"><CountUp 
-                            starat={0}
+                        
+                    <Typography color="textSecondary" gutterBottom>Recovered</Typography>
+                        <Typography variant="h5">
+                            <CountUp 
+                            start={0}
                             end={recovered.value}
                             duration={2.5}
-                            seperator=""
-                            /></Typography>
+                            seperator=","
+                            />
+                            
+                            </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-                        <Typography variant="body2">Number of recoveries  cases from COVID-19</Typography>
+                        <Typography variant="body2">Number of recoveries from COVID-19</Typography>
                     </CardContent>
                     </Grid>
 
@@ -50,10 +56,10 @@ const Cards= ({ data }) => {
                          <CardContent>
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>
                         <Typography variant="h5"><CountUp 
-                            starat={0}
+                            start={0}
                             end={deaths.value}
                             duration={2.5}
-                            seperator=""
+                            seperator=","
                             /></Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant="body2">Number of deaths caused by  COVID-19</Typography>
